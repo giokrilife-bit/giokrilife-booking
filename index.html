@@ -78,7 +78,6 @@
     }
     input:focus, select:focus, textarea:focus { border-color: var(--accent); }
 
-    /* Campo Calendario Personalizzato */
     .date-input-wrapper {
       position: relative;
       display: flex;
@@ -89,7 +88,7 @@
       width: 100%;
       padding-right: 2.8rem;
       cursor: pointer;
-      color-scheme: dark; /* Rende la modale del calendario nativo scura e coerente col tema */
+      color-scheme: dark;
     }
 
     .calendar-trigger-btn {
@@ -135,8 +134,9 @@
       color: var(--text-main); padding: 0.6rem; border-radius: 6px; cursor: pointer;
       font-size: 0.9rem; text-align: center; transition: all 0.2s;
     }
-    .time-btn:hover { border-color: var(--accent); }
+    .time-btn:hover:not(.disabled) { border-color: var(--accent); }
     .time-btn.selected { background-color: var(--accent); color: #fff; border-color: var(--accent); }
+    .time-btn.disabled { opacity: 0.3; cursor: not-allowed; text-decoration: line-through; background-color: #0f172a; }
 
     .btn-submit {
       background-color: var(--accent); color: #fff; border: none; padding: 1rem;
@@ -181,8 +181,7 @@
     </div>
   </header>
 
-  <!-- FORM CON IL TUO ENDPOINT FORMSPREE -->
-  <form id="bookingForm" action="https://formspree.io/f/xnpaplrg" method="POST" class="booking-container">
+  <form id="bookingForm" class="booking-container">
     
     <!-- STEP 1: DATI PERSONALI -->
     <div>
@@ -214,7 +213,7 @@
         <label class="service-card">
           <input type="radio" name="Area_Interesse" value="Strategia e Marketing" required>
           <div class="service-title">01. Strategia e Marketing</div>
-          <div class="service-desc">Posizionamento sul mercato, strategie di crescita e retail audit su misura per aziende e professionisti.</div>
+          <div class="service-desc">Posizionamento sul mercato, analisi delle vendite e ricerche di mercato su misura.</div>
         </label>
 
         <label class="service-card">
@@ -252,12 +251,11 @@
       </div>
     </div>
 
-    <!-- STEP 3: DATA E ORA (CALENDARIO) -->
+    <!-- STEP 3: DATA E ORA -->
     <div>
       <div class="section-title"><span class="step">3</span> Data e Ora dell'Appuntamento (Google Meet)</div>
       <div class="datetime-container">
         
-        <!-- CAMPO DATA CON PULSANTE CALENDARIO INTEGRATO -->
         <div class="form-group">
           <label for="dataAppuntamento">Apri il Calendario e scegli la Data *</label>
           <div class="date-input-wrapper">
@@ -311,13 +309,30 @@
         </a>
       </div>
 
-      <p style="font-size:0.8rem;">Ti risponderemo a breve all'indirizzo email indicato. A presto!</p>
+      <p style="font-size:0.8rem;">Ti abbiamo inviato una mail di conferma. A presto!</p>
       <button class="btn-close" onclick="closeModal()">Chiudi</button>
     </div>
   </div>
 
   <script>
-    // Selezione card aree
+    // INSERISCI QUI L'URL OTTENUTO DA GOOGLE APPS SCRIPT
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyIwbKhtGebtTpGZEupO1ohp0SGV3pzsFk0VlPSSzpeNwyGVK0_ynwb9Zqq5ESs7AJO/exec";
+
+    let busyEvents = [];
+
+    // Carica le occupazioni del calendario al caricamento della pagina
+    async function loadBusySlots() {
+      if (!SCRIPT_URL || SCRIPT_URL.includes("INSERISCI_QUI")) return;
+      try {
+        const response = await fetch(SCRIPT_URL);
+        busyEvents = await response.json();
+      } catch (err) {
+        console.error("Impossibile recuperare le disponibilità:", err);
+      }
+    }
+    loadBusySlots();
+
+    // Gestione Selezione Card
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach(card => {
       card.addEventListener('click', () => {
@@ -328,12 +343,10 @@
       });
     });
 
-    // Imposta il limite minimo della data a oggi
     const dateInput = document.getElementById('dataAppuntamento');
     const today = new Date().toISOString().split('T')[0];
     dateInput.setAttribute('min', today);
 
-    // Apertura forzata del calendario nativo cliccando sull'icona
     const openCalendarBtn = document.getElementById('openCalendarBtn');
     openCalendarBtn.addEventListener('click', () => {
       if ('showPicker' in HTMLInputElement.prototype) {
@@ -343,6 +356,38 @@
       }
     });
 
+    // Controllo disponibilità in base alla data selezionata
+    dateInput.addEventListener('change', checkAvailableSlots);
+
+    function checkAvailableSlots() {
+      const selectedDateStr = dateInput.value;
+      if (!selectedDateStr) return;
+
+      const timeBtns = document.querySelectorAll('.time-btn');
+      timeBtns.forEach(btn => {
+        const slotTimeStr = btn.getAttribute('data-time');
+        const slotStart = new Date(`${selectedDateStr}T${slotTimeStr}:00`);
+        const slotEnd = new Date(slotStart.getTime() + 45 * 60000);
+
+        // Verifica se lo slot si sovrappone a qualche evento già presente
+        const isOccupied = busyEvents.some(event => {
+          const evStart = new Date(event.start);
+          const evEnd = new Date(event.end);
+          return (slotStart < evEnd && slotEnd > evStart);
+        });
+
+        if (isOccupied) {
+          btn.classList.add('disabled');
+          if (btn.classList.contains('selected')) {
+            btn.classList.remove('selected');
+            document.getElementById('orarioNascosto').value = '';
+          }
+        } else {
+          btn.classList.remove('disabled');
+        }
+      });
+    }
+
     // Selezione slot orario
     let selectedTimeSlot = '';
     const timeBtns = document.querySelectorAll('.time-btn');
@@ -350,6 +395,7 @@
 
     timeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
+        if (btn.classList.contains('disabled')) return;
         timeBtns.forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         selectedTimeSlot = btn.getAttribute('data-time');
@@ -357,46 +403,51 @@
       });
     });
 
-    // Invio Form ad Endpoint Formspree via Fetch
+    // Invio Dati a Google Apps Script
     const bookingForm = document.getElementById('bookingForm');
     bookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       if (!selectedTimeSlot) {
-        alert('Per favore, seleziona un orario per la videochiamata.');
+        alert('Per favore, seleziona un orario valido e disponibile per la videochiamata.');
         return;
       }
 
       const btnSubmit = document.getElementById('btnSubmit');
       btnSubmit.disabled = true;
-      btnSubmit.textContent = 'Invio in corso...';
+      btnSubmit.textContent = 'Elaborazione e salvataggio in corso...';
 
-      const formData = new FormData(bookingForm);
+      const payload = {
+        nome: document.getElementById('nome').value,
+        cognome: document.getElementById('cognome').value,
+        email: document.getElementById('email').value,
+        telefono: document.getElementById('telefono').value,
+        area: document.querySelector('input[name="Area_Interesse"]:checked')?.value || 'Consulenza Generica',
+        data: document.getElementById('dataAppuntamento').value,
+        ora: selectedTimeSlot,
+        note: document.getElementById('note').value
+      };
 
       try {
-        const response = await fetch(bookingForm.action, {
+        const response = await fetch(SCRIPT_URL, {
           method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
+          body: JSON.stringify(payload)
         });
 
-        if (response.ok) {
-          const nome = document.getElementById('nome').value;
-          const cognome = document.getElementById('cognome').value;
-          const data = document.getElementById('dataAppuntamento').value;
-          const selectedArea = document.querySelector('input[name="Area_Interesse"]:checked')?.value || 'Consulenza Generica';
+        const result = await response.json();
 
-          document.getElementById('resNome').textContent = `${nome} ${cognome}`;
-          document.getElementById('resArea').textContent = selectedArea;
-          document.getElementById('resData').textContent = new Date(data).toLocaleDateString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        if (result.result === 'success') {
+          document.getElementById('resNome').textContent = `${payload.nome} ${payload.cognome}`;
+          document.getElementById('resArea').textContent = payload.area;
+          document.getElementById('resData').textContent = new Date(payload.data).toLocaleDateString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
           document.getElementById('resOra').textContent = selectedTimeSlot;
 
           document.getElementById('confirmationModal').style.display = 'flex';
         } else {
-          alert("Si è verificato un errore nell'invio. Verifica che tutti i campi siano corretti e riprova.");
+          alert("Si è verificato un errore durante il salvataggio. Riprova.");
         }
       } catch (error) {
-        alert("Errore di connessione. Verificare la connessione internet.");
+        alert("Errore di connessione. Verificare la rete e riprovare.");
       } finally {
         btnSubmit.disabled = false;
         btnSubmit.textContent = 'Conferma e Invia Prenotazione';
@@ -407,7 +458,7 @@
       document.getElementById('confirmationModal').style.display = 'none';
       bookingForm.reset();
       serviceCards.forEach(c => c.classList.remove('selected'));
-      timeBtns.forEach(b => b.classList.remove('selected'));
+      timeBtns.forEach(b => b.classList.remove('selected', 'disabled'));
       selectedTimeSlot = '';
       hiddenTimeInput.value = '';
     }
