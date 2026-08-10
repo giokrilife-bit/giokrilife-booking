@@ -23,12 +23,7 @@
       --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
 
     body {
       background-color: var(--bg-dark);
@@ -40,303 +35,104 @@
       padding: 2rem 1rem;
     }
 
-    header {
-      text-align: center;
-      max-width: 800px;
-      margin-bottom: 2.5rem;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.5rem;
-    }
-
-    header h1 span {
-      color: var(--accent);
-    }
-
-    header p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
+    header { text-align: center; max-width: 800px; margin-bottom: 2.5rem; }
+    header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header h1 span { color: var(--accent); }
+    header p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
 
     .badge-meet {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: rgba(0, 137, 123, 0.15);
-      border: 1px solid var(--meet-color);
-      color: #4db6ac;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-top: 1rem;
+      display: inline-flex; align-items: center; gap: 8px;
+      background-color: rgba(0, 137, 123, 0.15); border: 1px solid var(--meet-color);
+      color: #4db6ac; padding: 6px 14px; border-radius: 20px;
+      font-size: 0.85rem; font-weight: 600; margin-top: 1rem;
     }
 
     .booking-container {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      width: 100%;
-      max-width: 900px;
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      background-color: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      width: 100%; max-width: 900px; padding: 2.5rem;
+      display: flex; flex-direction: column; gap: 2rem;
     }
 
     .section-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-main);
-      border-bottom: 2px solid var(--border-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 1.25rem; font-weight: 600; color: var(--text-main);
+      border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem; display: flex; align-items: center; gap: 10px;
     }
 
     .section-title span.step {
-      background-color: var(--accent);
-      color: #fff;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
+      background-color: var(--accent); color: #fff; width: 26px; height: 26px;
+      border-radius: 50%; display: inline-flex; align-items: center;
+      justify-content: center; font-size: 0.85rem;
     }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group.full-width { grid-column: 1 / -1; }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .form-group.full-width {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-
+    label { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
     input, select, textarea {
-      background-color: rgba(15, 23, 42, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      color: var(--text-main);
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s ease;
+      background-color: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color);
+      border-radius: 8px; padding: 0.75rem 1rem; color: var(--text-main);
+      font-size: 0.95rem; outline: none; transition: border-color 0.2s ease;
     }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
 
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--accent);
-    }
-
-    /* Griglia Aree di Interesse */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
     .service-card {
-      background-color: rgba(15, 23, 42, 0.4);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      position: relative;
+      background-color: rgba(15, 23, 42, 0.4); border: 1px solid var(--border-color);
+      border-radius: 10px; padding: 1rem; cursor: pointer; transition: all 0.2s ease; position: relative;
     }
+    .service-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .service-card.selected { border-color: var(--accent); background-color: rgba(217, 119, 6, 0.1); }
+    .service-card input[type="radio"] { position: absolute; top: 12px; right: 12px; accent-color: var(--accent); }
 
-    .service-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
+    .service-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.3rem; color: var(--text-main); padding-right: 20px; }
+    .service-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
+    .legal-highlight { border-left: 3px solid var(--accent); padding-left: 8px; margin-top: 6px; font-size: 0.8rem; color: #fbbf24; }
 
-    .service-card.selected {
-      border-color: var(--accent);
-      background-color: rgba(217, 119, 6, 0.1);
-    }
+    .datetime-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .datetime-container, .form-grid { grid-template-columns: 1fr; } }
 
-    .service-card input[type="radio"] {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      accent-color: var(--accent);
-    }
-
-    .service-title {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      color: var(--text-main);
-      padding-right: 20px;
-    }
-
-    .service-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    .legal-highlight {
-      border-left: 3px solid var(--accent);
-      padding-left: 8px;
-      margin-top: 6px;
-      font-size: 0.8rem;
-      color: #fbbf24;
-    }
-
-    /* Calendario e Slot Orari */
-    .datetime-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .datetime-container, .form-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .time-slots {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.6rem;
-    }
-
+    .time-slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
     .time-btn {
-      background-color: rgba(15, 23, 42, 0.6);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      padding: 0.6rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      text-align: center;
-      transition: all 0.2s;
+      background-color: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color);
+      color: var(--text-main); padding: 0.6rem; border-radius: 6px; cursor: pointer;
+      font-size: 0.9rem; text-align: center; transition: all 0.2s;
     }
+    .time-btn:hover { border-color: var(--accent); }
+    .time-btn.selected { background-color: var(--accent); color: #fff; border-color: var(--accent); }
 
-    .time-btn:hover {
-      border-color: var(--accent);
-    }
-
-    .time-btn.selected {
-      background-color: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-
-    /* Bottone invio */
     .btn-submit {
-      background-color: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 1rem;
-      font-size: 1.05rem;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      width: 100%;
-      margin-top: 1rem;
+      background-color: var(--accent); color: #fff; border: none; padding: 1rem;
+      font-size: 1.05rem; font-weight: 600; border-radius: 8px; cursor: pointer;
+      transition: background-color 0.2s ease; width: 100%; margin-top: 1rem;
     }
+    .btn-submit:hover { background-color: var(--accent-hover); }
 
-    .btn-submit:hover {
-      background-color: var(--accent-hover);
-    }
-
-    /* Modale / Conferma */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(5px);
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      z-index: 1000;
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+      align-items: center; justify-content: center; padding: 1rem; z-index: 1000;
     }
-
     .modal-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      max-width: 550px;
-      width: 100%;
-      text-align: center;
-      box-shadow: var(--shadow);
+      background-color: var(--bg-card); border: 1px solid var(--border-color);
+      border-radius: var(--radius); padding: 2.5rem; max-width: 550px; width: 100%;
+      text-align: center; box-shadow: var(--shadow);
     }
-
-    .modal-card h2 {
-      color: #10b981;
-      margin-bottom: 0.8rem;
-    }
-
-    .modal-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
-    }
+    .modal-card h2 { color: #10b981; margin-bottom: 0.8rem; }
+    .modal-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5; }
 
     .meet-box {
-      background: rgba(0, 137, 123, 0.1);
-      border: 1px dashed var(--meet-color);
-      padding: 1.2rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
+      background: rgba(0, 137, 123, 0.1); border: 1px dashed var(--meet-color);
+      padding: 1.2rem; border-radius: 8px; margin-bottom: 1.5rem;
     }
-
     .meet-link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: var(--meet-color);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      font-weight: 600;
-      margin-top: 0.8rem;
-      transition: background 0.2s;
+      display: inline-flex; align-items: center; gap: 10px;
+      background-color: var(--meet-color); color: #fff; text-decoration: none;
+      padding: 0.8rem 1.5rem; border-radius: 6px; font-weight: 600; margin-top: 0.8rem;
     }
-
-    .meet-link-btn:hover {
-      background-color: var(--meet-hover);
-    }
-
-    .btn-close {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+    .btn-close { background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -350,95 +146,88 @@
     </div>
   </header>
 
-  <form id="bookingForm" class="booking-container">
+  <!-- SOSTITUISCI 'TUO_ID_FORMSPREE' CON L'ID FORNITO DA FORMSPREE -->
+  <form id="bookingForm" action="https://formspree.io/f/TUO_ID_FORMSPREE" method="POST" class="booking-container">
     
     <!-- STEP 1: DATI PERSONALI -->
     <div>
-      <div class="section-title">
-        <span class="step">1</span> Dati di Contatto
-      </div>
+      <div class="section-title"><span class="step">1</span> Dati di Contatto</div>
       <div class="form-grid">
         <div class="form-group">
           <label for="nome">Nome *</label>
-          <input type="text" id="nome" required placeholder="Es. Mario">
+          <input type="text" id="nome" name="Nome" required placeholder="Es. Mario">
         </div>
         <div class="form-group">
           <label for="cognome">Cognome *</label>
-          <input type="text" id="cognome" required placeholder="Es. Rossi">
+          <input type="text" id="cognome" name="Cognome" required placeholder="Es. Rossi">
         </div>
         <div class="form-group">
           <label for="email">Email *</label>
-          <input type="email" id="email" required placeholder="mario.rossi@email.it">
+          <input type="email" id="email" name="Email" required placeholder="mario.rossi@email.it">
         </div>
         <div class="form-group">
           <label for="telefono">Telefono *</label>
-          <input type="tel" id="telefono" required placeholder="+39 333 1234567">
+          <input type="tel" id="telefono" name="Telefono" required placeholder="+39 333 1234567">
         </div>
       </div>
     </div>
 
     <!-- STEP 2: AREA DI INTERESSE -->
     <div>
-      <div class="section-title">
-        <span class="step">2</span> Seleziona l'Area di Interesse
-      </div>
+      <div class="section-title"><span class="step">2</span> Seleziona l'Area di Interesse</div>
       <div class="services-grid">
-        
         <label class="service-card">
-          <input type="radio" name="area" value="Strategia e Marketing" required>
+          <input type="radio" name="Area_Interesse" value="Strategia e Marketing" required>
           <div class="service-title">01. Strategia e Marketing</div>
           <div class="service-desc">Posizionamento sul mercato, strategie di crescita e retail audit su misura per aziende e professionisti.</div>
         </label>
 
         <label class="service-card">
-          <input type="radio" name="area" value="Protezione e Assicurazioni">
+          <input type="radio" name="Area_Interesse" value="Protezione e Assicurazioni">
           <div class="service-title">02. Protezione e Assicurazioni</div>
           <div class="service-desc">Analisi dei rischi e coperture assicurative personalizzate per persone, famiglie e attività.</div>
         </label>
 
         <label class="service-card">
-          <input type="radio" name="area" value="Welfare e Benessere">
+          <input type="radio" name="Area_Interesse" value="Welfare e Benessere">
           <div class="service-title">03. Welfare e Benessere</div>
           <div class="service-desc">Soluzioni di welfare aziendale e piani sanitari per dipendenti, collaboratori e famiglie.</div>
         </label>
 
         <label class="service-card">
-          <input type="radio" name="area" value="Energia ed Efficienza">
+          <input type="radio" name="Area_Interesse" value="Energia ed Efficienza">
           <div class="service-title">04. Energia ed Efficienza</div>
           <div class="service-desc">Ottimizzazione dei consumi e analisi tariffe energetiche per ridurre i costi di imprese e abitazioni.</div>
         </label>
 
         <label class="service-card">
-          <input type="radio" name="area" value="Comunità e Condomini">
+          <input type="radio" name="Area_Interesse" value="Comunità e Condomini">
           <div class="service-title">05. Comunità e Condomini</div>
           <div class="service-desc">Supporto nella gestione e valorizzazione degli immobili e dei contesti abitativi condivisi.</div>
         </label>
 
-        <!-- AREA LEGALE / ISTRUTTORIA INTEGRATA -->
         <label class="service-card">
-          <input type="radio" name="area" value="Ricerca Documentale, Legale e Assistenza Istruttoria">
+          <input type="radio" name="Area_Interesse" value="Ricerca Documentale, Legale e Istruttoria">
           <div class="service-title">06. Ricerca Documentale e Istruttoria</div>
           <div class="service-desc">Supporto per studi legali e cittadini nella verifica giurisprudenziale.</div>
           <div class="legal-highlight">
-            ✦ <strong>Servizio Cittadini:</strong> Organizzazione e riordino carte/documenti per la preparazione dell'istruttoria prima del rapporto col legali.
+            ✦ <strong>Servizio Cittadini:</strong> Organizzazione e riordino carte/documenti per la preparazione dell'istruttoria prima del rapporto col legale.
           </div>
         </label>
-
       </div>
     </div>
 
     <!-- STEP 3: DATA E ORA (CALENDARIO) -->
     <div>
-      <div class="section-title">
-        <span class="step">3</span> Data e Ora dell'Appuntamento (Google Meet)
-      </div>
+      <div class="section-title"><span class="step">3</span> Data e Ora dell'Appuntamento (Google Meet)</div>
       <div class="datetime-container">
         <div class="form-group">
           <label for="dataAppuntamento">Seleziona la Data *</label>
-          <input type="date" id="dataAppuntamento" required>
+          <input type="date" id="dataAppuntamento" name="Data_Appuntamento" required>
         </div>
         <div class="form-group">
           <label>Seleziona l'Orario *</label>
+          <input type="hidden" id="orarioNascosto" name="Orario_Appuntamento" required>
           <div class="time-slots" id="timeSlotsContainer">
             <div class="time-btn" data-time="09:30">09:30</div>
             <div class="time-btn" data-time="11:00">11:00</div>
@@ -452,35 +241,33 @@
     <!-- NOTE -->
     <div class="form-group full-width">
       <label for="note">Note o dettagli sulla tua richiesta (opzionale)</label>
-      <textarea id="note" rows="3" placeholder="Descrivi brevemente l'argomento dell'incontro..."></textarea>
+      <textarea id="note" name="Note" rows="3" placeholder="Descrivi brevemente l'argomento dell'incontro..."></textarea>
     </div>
 
-    <button type="submit" class="btn-submit">Conferma e Prenota su Google Meet</button>
+    <button type="submit" class="btn-submit" id="btnSubmit">Conferma e Invia Prenotazione</button>
   </form>
 
   <!-- MODALE DI CONFERMA -->
   <div class="modal-overlay" id="confirmationModal">
     <div class="modal-card">
-      <h2>Prenotazione Confermata!</h2>
-      <p>Grazie <strong id="resNome"></strong>, la tua richiesta per l'area <strong id="resArea"></strong> è stata registrata con successo.</p>
+      <h2>Prenotazione Inviata!</h2>
+      <p>Grazie <strong id="resNome"></strong>, la tua richiesta per l'area <strong id="resArea"></strong> è stata inviata a GiOKri Life.</p>
       
       <div class="meet-box">
         <p style="margin-bottom:0.5rem; color:var(--text-main); font-weight:600;">Dettagli Videochiamata:</p>
         <p style="font-size:0.9rem;">📅 <span id="resData"></span> alle ore <span id="resOra"></span></p>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.4rem;">Il link è pronto per il tuo collegamento:</p>
-        <a href="https://meet.google.com/new" target="_blank" class="meet-link-btn" id="meetLink">
+        <a href="https://meet.google.com/lookup/giokrilife-consulting" target="_blank" class="meet-link-btn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
           Accedi alla stanza Google Meet
         </a>
       </div>
 
-      <p style="font-size:0.8rem;">Un riepilogo con le istruzioni è stato predisposto. Ci vediamo online!</p>
+      <p style="font-size:0.8rem;">Riceverai una conferma al tuo indirizzo email. A presto!</p>
       <button class="btn-close" onclick="closeModal()">Chiudi</button>
     </div>
   </div>
 
   <script>
-    // Gestione della selezione delle card delle aree
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach(card => {
       card.addEventListener('click', () => {
@@ -491,25 +278,26 @@
       });
     });
 
-    // Imposta la data minima del calendario a oggi
     const dateInput = document.getElementById('dataAppuntamento');
     const today = new Date().toISOString().split('T')[0];
     dateInput.setAttribute('min', today);
 
-    // Gestione slot orario
     let selectedTimeSlot = '';
     const timeBtns = document.querySelectorAll('.time-btn');
+    const hiddenTimeInput = document.getElementById('orarioNascosto');
+
     timeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         timeBtns.forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         selectedTimeSlot = btn.getAttribute('data-time');
+        hiddenTimeInput.value = selectedTimeSlot;
       });
     });
 
-    // Gestione Invio Form
+    // Invio asincrono tramite Fetch API a Formspree
     const bookingForm = document.getElementById('bookingForm');
-    bookingForm.addEventListener('submit', (e) => {
+    bookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       if (!selectedTimeSlot) {
@@ -517,23 +305,40 @@
         return;
       }
 
-      const nome = document.getElementById('nome').value;
-      const cognome = document.getElementById('cognome').value;
-      const data = document.getElementById('dataAppuntamento').value;
-      const selectedArea = document.querySelector('input[name="area"]:checked')?.value || 'Consulenza Generica';
+      const btnSubmit = document.getElementById('btnSubmit');
+      btnSubmit.disabled = true;
+      btnSubmit.textContent = 'Invio in corso...';
 
-      // Popola la modale di conferma
-      document.getElementById('resNome').textContent = `${nome} ${cognome}`;
-      document.getElementById('resArea').textContent = selectedArea;
-      document.getElementById('resData').textContent = new Date(data).toLocaleDateString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      document.getElementById('resOra').textContent = selectedTimeSlot;
+      const formData = new FormData(bookingForm);
 
-      // Link dinamico Google Meet (sostituibile con link fisso o API Google Calendar)
-      const meetUrl = "https://meet.google.com/lookup/giokrilife-consulting";
-      document.getElementById('meetLink').href = meetUrl;
+      try {
+        const response = await fetch(bookingForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
 
-      // Mostra modale
-      document.getElementById('confirmationModal').style.display = 'flex';
+        if (response.ok) {
+          const nome = document.getElementById('nome').value;
+          const cognome = document.getElementById('cognome').value;
+          const data = document.getElementById('dataAppuntamento').value;
+          const selectedArea = document.querySelector('input[name="Area_Interesse"]:checked')?.value || 'Consulenza Generica';
+
+          document.getElementById('resNome').textContent = `${nome} ${cognome}`;
+          document.getElementById('resArea').textContent = selectedArea;
+          document.getElementById('resData').textContent = new Date(data).toLocaleDateString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+          document.getElementById('resOra').textContent = selectedTimeSlot;
+
+          document.getElementById('confirmationModal').style.display = 'flex';
+        } else {
+          alert("Si è verificato un problema nell'invio della prenotazione. Riprova più tardi.");
+        }
+      } catch (error) {
+        alert("Errore di connessione. Verificare di essere connessi a internet.");
+      } finally {
+        btnSubmit.disabled = false;
+        btnSubmit.textContent = 'Conferma e Invia Prenotazione';
+      }
     });
 
     function closeModal() {
@@ -542,6 +347,7 @@
       serviceCards.forEach(c => c.classList.remove('selected'));
       timeBtns.forEach(b => b.classList.remove('selected'));
       selectedTimeSlot = '';
+      hiddenTimeInput.value = '';
     }
   </script>
 </body>
