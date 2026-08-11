@@ -553,7 +553,7 @@
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
 
-        </button>
+       
 
       </div>
 
@@ -841,29 +841,7 @@
       );
 
 
-   openCalendarBtn.addEventListener('click', function () {
-
-  try {
-
-    dateInput.focus();
-
-    if (typeof dateInput.showPicker === 'function') {
-      dateInput.showPicker();
-    }
-
-  } catch (error) {
-
-    console.log(
-      'Apertura calendario tramite pulsante:',
-      error
-    );
-
-    dateInput.focus();
-
-  }
-
-});
-
+   
 
     // ============================================================
     // CONTROLLO DISPONIBILITA'
