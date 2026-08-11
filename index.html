@@ -841,25 +841,28 @@
       );
 
 
-    openCalendarBtn.addEventListener(
-      'click',
-      () => {
+   openCalendarBtn.addEventListener('click', function () {
 
-        if (
-          'showPicker' in
-          HTMLInputElement.prototype
-        ) {
+  try {
 
-          dateInput.showPicker();
+    dateInput.focus();
 
-        } else {
+    if (typeof dateInput.showPicker === 'function') {
+      dateInput.showPicker();
+    }
 
-          dateInput.focus();
+  } catch (error) {
 
-        }
-
-      }
+    console.log(
+      'Apertura calendario tramite pulsante:',
+      error
     );
+
+    dateInput.focus();
+
+  }
+
+});
 
 
     // ============================================================
