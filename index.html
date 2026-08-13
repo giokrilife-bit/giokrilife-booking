@@ -1,16 +1,39 @@
+```html
 <!DOCTYPE html>
-
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Prenota un Appuntamento | GiOKri Life Consulting Hub</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ============================================================
+       MICROSOFT CLARITY
+       Project ID: y1nqrfdn2h
+       ============================================================ -->
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);
+        t.async=1;
+        t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y1nqrfdn2h");
+  </script>
 
   <style>
+
     :root {
       --bg-dark: #0f172a;
       --bg-card: #1e293b;
@@ -378,6 +401,7 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
   </style>
 
 </head>
@@ -385,291 +409,16 @@
 <body>
 
   <header>
-    <h1>GiO<span>K</span>ri <span>Life</span> Consulting Hub</h1>
-    <p>Prenota una consulenza personalizzata direttamente online con i nostri esperti.</p>
 
-```
-<div class="badge-meet">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
-  </svg>
-  Incontro Virtuale via Google Meet
-</div>
-```
+    <h1>
+      GiO<span>K</span>ri <span>Life</span> Consulting Hub
+    </h1>
 
-  </header>
-
-  <form id="bookingForm" class="booking-container">
-
-```
-<!-- STEP 1: DATI PERSONALI -->
-<div>
-  <div class="section-title">
-    <span class="step">1</span> Dati di Contatto
-  </div>
-
-  <div class="form-grid">
-
-    <div class="form-group">
-      <label for="nome">Nome *</label>
-      <input type="text" id="nome" name="Nome" required placeholder="Es. Mario">
-    </div>
-
-    <div class="form-group">
-      <label for="cognome">Cognome *</label>
-      <input type="text" id="cognome" name="Cognome" required placeholder="Es. Rossi">
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="Email" required placeholder="mario.rossi@email.it">
-    </div>
-
-    <div class="form-group">
-      <label for="telefono">Telefono *</label>
-      <input type="tel" id="telefono" name="Telefono" required placeholder="+39 333 1234567">
-    </div>
-
-  </div>
-</div>
-
-
-<!-- STEP 2: AREA DI INTERESSE -->
-<div>
-
-  <div class="section-title">
-    <span class="step">2</span> Seleziona l'Area di Interesse
-  </div>
-
-  <div class="services-grid">
-
-    <label class="service-card">
-      <input type="radio" name="Area_Interesse" value="Strategia e Marketing" required>
-      <div class="service-title">01. Strategia e Marketing</div>
-      <div class="service-desc">
-        Posizionamento sul mercato, analisi delle vendite e ricerche di mercato su misura.
-      </div>
-    </label>
-
-    <label class="service-card">
-      <input type="radio" name="Area_Interesse" value="Protezione e Assicurazioni">
-      <div class="service-title">02. Protezione e Assicurazioni</div>
-      <div class="service-desc">
-        Analisi dei rischi e coperture assicurative personalizzate per persone, famiglie e attività.
-      </div>
-    </label>
-
-    <label class="service-card">
-      <input type="radio" name="Area_Interesse" value="Welfare e Benessere">
-      <div class="service-title">03. Welfare e Benessere</div>
-      <div class="service-desc">
-        Soluzioni di welfare aziendale e piani sanitari per dipendenti, collaboratori e famiglie.
-      </div>
-    </label>
-
-    <label class="service-card">
-      <input type="radio" name="Area_Interesse" value="Energia ed Efficienza">
-      <div class="service-title">04. Energia ed Efficienza</div>
-      <div class="service-desc">
-        Ottimizzazione dei consumi e analisi tariffe energetiche per ridurre i costi di imprese e abitazioni.
-      </div>
-    </label>
-
-    <label class="service-card">
-      <input type="radio" name="Area_Interesse" value="Comunità e Condomini">
-      <div class="service-title">05. Comunità e Condomini</div>
-      <div class="service-desc">
-        Supporto nella gestione e valorizzazione degli immobili e dei contesti abitativi condivisi.
-      </div>
-    </label>
-
-    <label class="service-card">
-      <input type="radio" name="Area_Interesse" value="Ricerca Documentale, Legale e Istruttoria">
-
-      <div class="service-title">
-        06. Ricerca Documentale e Istruttoria
-      </div>
-
-      <div class="service-desc">
-        Supporto per studi legali e cittadini nella verifica giurisprudenziale.
-      </div>
-
-      <div class="legal-highlight">
-        ✦ <strong>Servizio Cittadini:</strong>
-        Organizzazione e riordino carte/documenti per la preparazione dell'istruttoria prima del rapporto col legale.
-      </div>
-
-    </label>
-
-  </div>
-</div>
-
-
-<!-- STEP 3: DATA E ORA -->
-<div>
-
-  <div class="section-title">
-    <span class="step">3</span>
-    Data e Ora dell'Appuntamento (Google Meet)
-  </div>
-
-  <div class="datetime-container">
-
-    <div class="form-group">
-
-      <label for="dataAppuntamento">
-        Apri il Calendario e scegli la Data *
-      </label>
-
-      <div class="date-input-wrapper">
-
-        <input
-          type="date"
-          id="dataAppuntamento"
-          name="Data_Appuntamento"
-          required
-        >
-
-        <button
-          type="button"
-          class="calendar-trigger-btn"
-          id="openCalendarBtn"
-          title="Apri calendario"
-        >
-
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div class="form-group">
-
-      <label>
-        Seleziona l'Orario *
-      </label>
-
-      <input
-        type="hidden"
-        id="orarioNascosto"
-        name="Orario_Appuntamento"
-        required
-      >
-
-      <div
-        class="time-slots"
-        id="timeSlotsContainer"
-      >
-
-        <div class="time-btn" data-time="09:30">
-          09:30
-        </div>
-
-        <div class="time-btn" data-time="11:00">
-          11:00
-        </div>
-
-        <div class="time-btn" data-time="15:00">
-          15:00
-        </div>
-
-        <div class="time-btn" data-time="16:30">
-          16:30
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- NOTE -->
-<div class="form-group full-width">
-
-  <label for="note">
-    Note o dettagli sulla tua richiesta (opzionale)
-  </label>
-
-  <textarea
-    id="note"
-    name="Note"
-    rows="3"
-    placeholder="Descrivi brevemente l'argomento dell'incontro..."
-  ></textarea>
-
-</div>
-
-
-<button
-  type="submit"
-  class="btn-submit"
-  id="btnSubmit"
->
-  Conferma e Invia Prenotazione
-</button>
-```
-
-  </form>
-
-  <!-- MODALE DI CONFERMA -->
-
-  <div
-    class="modal-overlay"
-    id="confirmationModal"
-  >
-
-```
-<div class="modal-card">
-
-  <h2>Prenotazione Inviata!</h2>
-
-  <p>
-    Grazie
-    <strong id="resNome"></strong>,
-    la tua richiesta per l'area
-    <strong id="resArea"></strong>
-    è stata inviata a GiOKri Life.
-  </p>
-
-
-  <div class="meet-box">
-
-    <p style="margin-bottom:0.5rem; color:var(--text-main); font-weight:600;">
-      Dettagli Videochiamata:
+    <p>
+      Prenota una consulenza personalizzata direttamente online con i nostri esperti.
     </p>
 
-    <p style="font-size:0.9rem;">
-      📅
-      <span id="resData"></span>
-      alle ore
-      <span id="resOra"></span>
-    </p>
-
-    <a
-  href="https://meet.google.com/jnc-ckkv-kbp"
-  target="_blank"
-  class="meet-link-btn"
->
+    <div class="badge-meet">
 
       <svg
         width="18"
@@ -680,45 +429,578 @@
         <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
       </svg>
 
-      Accedi alla stanza Google Meet
+      Incontro Virtuale via Google Meet
 
-    </a>
+    </div>
 
-  </div>
+  </header>
 
 
-  <p style="font-size:0.8rem;">
-    Ti abbiamo inviato una mail di conferma. A presto!
-  </p>
+  <form id="bookingForm" class="booking-container">
 
-  <button
-    class="btn-close"
-    onclick="closeModal()"
+
+    <!-- ========================================================
+         STEP 1: DATI PERSONALI
+         ======================================================== -->
+
+    <div>
+
+      <div class="section-title">
+        <span class="step">1</span>
+        Dati di Contatto
+      </div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+
+          <label for="nome">
+            Nome *
+          </label>
+
+          <input
+            type="text"
+            id="nome"
+            name="Nome"
+            required
+            placeholder="Es. Mario"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="cognome">
+            Cognome *
+          </label>
+
+          <input
+            type="text"
+            id="cognome"
+            name="Cognome"
+            required
+            placeholder="Es. Rossi"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Email *
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="Email"
+            required
+            placeholder="mario.rossi@email.it"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="telefono">
+            Telefono *
+          </label>
+
+          <input
+            type="tel"
+            id="telefono"
+            name="Telefono"
+            required
+            placeholder="+39 333 1234567"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         STEP 2: AREA DI INTERESSE
+         ======================================================== -->
+
+    <div>
+
+      <div class="section-title">
+
+        <span class="step">2</span>
+
+        Seleziona l'Area di Interesse
+
+      </div>
+
+
+      <div class="services-grid">
+
+
+        <label class="service-card">
+
+          <input
+            type="radio"
+            name="Area_Interesse"
+            value="Strategia e Marketing"
+            required
+          >
+
+          <div class="service-title">
+            01. Strategia e Marketing
+          </div>
+
+          <div class="service-desc">
+            Posizionamento sul mercato, analisi delle vendite e ricerche di mercato su misura.
+          </div>
+
+        </label>
+
+
+        <label class="service-card">
+
+          <input
+            type="radio"
+            name="Area_Interesse"
+            value="Protezione e Assicurazioni"
+          >
+
+          <div class="service-title">
+            02. Protezione e Assicurazioni
+          </div>
+
+          <div class="service-desc">
+            Analisi dei rischi e coperture assicurative personalizzate per persone, famiglie e attività.
+          </div>
+
+        </label>
+
+
+        <label class="service-card">
+
+          <input
+            type="radio"
+            name="Area_Interesse"
+            value="Welfare e Benessere"
+          >
+
+          <div class="service-title">
+            03. Welfare e Benessere
+          </div>
+
+          <div class="service-desc">
+            Soluzioni di welfare aziendale e piani sanitari per dipendenti, collaboratori e famiglie.
+          </div>
+
+        </label>
+
+
+        <label class="service-card">
+
+          <input
+            type="radio"
+            name="Area_Interesse"
+            value="Energia ed Efficienza"
+          >
+
+          <div class="service-title">
+            04. Energia ed Efficienza
+          </div>
+
+          <div class="service-desc">
+            Ottimizzazione dei consumi e analisi tariffe energetiche per ridurre i costi di imprese e abitazioni.
+          </div>
+
+        </label>
+
+
+        <label class="service-card">
+
+          <input
+            type="radio"
+            name="Area_Interesse"
+            value="Comunità e Condomini"
+          >
+
+          <div class="service-title">
+            05. Comunità e Condomini
+          </div>
+
+          <div class="service-desc">
+            Supporto nella gestione e valorizzazione degli immobili e dei contesti abitativi condivisi.
+          </div>
+
+        </label>
+
+
+        <label class="service-card">
+
+          <input
+            type="radio"
+            name="Area_Interesse"
+            value="Ricerca Documentale, Legale e Istruttoria"
+          >
+
+          <div class="service-title">
+            06. Ricerca Documentale e Istruttoria
+          </div>
+
+          <div class="service-desc">
+            Supporto per studi legali e cittadini nella verifica giurisprudenziale.
+          </div>
+
+          <div class="legal-highlight">
+            ✦ <strong>Servizio Cittadini:</strong>
+            Organizzazione e riordino carte/documenti per la preparazione dell'istruttoria prima del rapporto col legale.
+          </div>
+
+        </label>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         STEP 3: DATA E ORA
+         ======================================================== -->
+
+    <div>
+
+      <div class="section-title">
+
+        <span class="step">3</span>
+
+        Data e Ora dell'Appuntamento (Google Meet)
+
+      </div>
+
+
+      <div class="datetime-container">
+
+
+        <div class="form-group">
+
+          <label for="dataAppuntamento">
+            Apri il Calendario e scegli la Data *
+          </label>
+
+
+          <div class="date-input-wrapper">
+
+            <input
+              type="date"
+              id="dataAppuntamento"
+              name="Data_Appuntamento"
+              required
+            >
+
+
+            <button
+              type="button"
+              class="calendar-trigger-btn"
+              id="openCalendarBtn"
+              title="Apri calendario"
+            >
+
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="18"
+                  rx="2"
+                ></rect>
+
+                <line
+                  x1="16"
+                  y1="2"
+                  x2="16"
+                  y2="6"
+                ></line>
+
+                <line
+                  x1="8"
+                  y1="2"
+                  x2="8"
+                  y2="6"
+                ></line>
+
+                <line
+                  x1="3"
+                  y1="10"
+                  x2="21"
+                  y2="10"
+                ></line>
+
+              </svg>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Seleziona l'Orario *
+          </label>
+
+
+          <input
+            type="hidden"
+            id="orarioNascosto"
+            name="Orario_Appuntamento"
+            required
+          >
+
+
+          <div
+            class="time-slots"
+            id="timeSlotsContainer"
+          >
+
+            <div
+              class="time-btn"
+              data-time="09:30"
+            >
+              09:30
+            </div>
+
+            <div
+              class="time-btn"
+              data-time="11:00"
+            >
+              11:00
+            </div>
+
+            <div
+              class="time-btn"
+              data-time="15:00"
+            >
+              15:00
+            </div>
+
+            <div
+              class="time-btn"
+              data-time="16:30"
+            >
+              16:30
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         NOTE
+         ======================================================== -->
+
+    <div class="form-group full-width">
+
+      <label for="note">
+        Note o dettagli sulla tua richiesta (opzionale)
+      </label>
+
+      <textarea
+        id="note"
+        name="Note"
+        rows="3"
+        placeholder="Descrivi brevemente l'argomento dell'incontro..."
+      ></textarea>
+
+    </div>
+
+
+    <!-- ========================================================
+         INVIO
+         ======================================================== -->
+
+    <button
+      type="submit"
+      class="btn-submit"
+      id="btnSubmit"
+    >
+      Conferma e Invia Prenotazione
+    </button>
+
+  </form>
+
+
+  <!-- ==========================================================
+       MODALE DI CONFERMA
+       ========================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="confirmationModal"
   >
-    Chiudi
-  </button>
 
-</div>
-```
+    <div class="modal-card">
+
+      <h2>
+        Prenotazione Inviata!
+      </h2>
+
+
+      <p>
+
+        Grazie
+        <strong id="resNome"></strong>,
+
+        la tua richiesta per l'area
+
+        <strong id="resArea"></strong>
+
+        è stata inviata a GiOKri Life.
+
+      </p>
+
+
+      <div class="meet-box">
+
+        <p
+          style="margin-bottom:0.5rem; color:var(--text-main); font-weight:600;"
+        >
+          Dettagli Videochiamata:
+        </p>
+
+
+        <p style="font-size:0.9rem;">
+
+          📅
+
+          <span id="resData"></span>
+
+          alle ore
+
+          <span id="resOra"></span>
+
+        </p>
+
+
+        <a
+          href="https://meet.google.com/jnc-ckkv-kbp"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="meet-link-btn"
+          id="googleMeetBtn"
+        >
+
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+
+            <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/>
+
+          </svg>
+
+          Accedi alla stanza Google Meet
+
+        </a>
+
+      </div>
+
+
+      <p style="font-size:0.8rem;">
+        Ti abbiamo inviato una mail di conferma. A presto!
+      </p>
+
+
+      <button
+        class="btn-close"
+        id="btnCloseModal"
+        type="button"
+      >
+        Chiudi
+      </button>
+
+    </div>
 
   </div>
+
 
   <script>
 
-    // ============================================================
-    // COLLEGAMENTO ALLA NUOVA WEB APP GOOGLE APPS SCRIPT
-    // ============================================================
+    /* ============================================================
+       MICROSOFT CLARITY - EVENTI PERSONALIZZATI
+       ============================================================ */
 
-  
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxbI9jSxeESFGHnbPx3-mvjMQt32GlfbEhUktwxc23Pf3x8yINis9fxLYXxcwwWWE_b/exec";
+    function clarityEvent(eventName) {
+
+      try {
+
+        if (
+          typeof window.clarity === 'function'
+        ) {
+
+          window.clarity(
+            "event",
+            eventName
+          );
+
+        }
+
+      } catch (error) {
+
+        console.warn(
+          "Clarity event non disponibile:",
+          error
+        );
+
+      }
+
+    }
+
+
+    /* ============================================================
+       EVENTO: APERTURA BOOKING
+       ============================================================ */
+
+    clarityEvent(
+      "booking_aperta"
+    );
+
+
+    /* ============================================================
+       COLLEGAMENTO ALLA WEB APP GOOGLE APPS SCRIPT
+       ============================================================ */
+
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbxbI9jSxeESFGHnbPx3-mvjMQt32GlfbEhUktwxc23Pf3x8yINis9fxLYXxcwwWWE_b/exec";
 
 
     let busyEvents = [];
 
 
-    // ============================================================
-    // CARICAMENTO OCCUPAZIONI CALENDARIO
-    // ============================================================
+    /* ============================================================
+       CARICAMENTO OCCUPAZIONI CALENDARIO
+       ============================================================ */
 
     async function loadBusySlots() {
 
@@ -726,11 +1008,15 @@
         !SCRIPT_URL ||
         SCRIPT_URL.includes("INSERISCI_QUI")
       ) {
+
         console.error(
           "SCRIPT_URL non configurato."
         );
+
         return;
+
       }
+
 
       try {
 
@@ -738,8 +1024,12 @@
           "Caricamento disponibilità calendario..."
         );
 
+
         const response =
-          await fetch(SCRIPT_URL);
+          await fetch(
+            SCRIPT_URL
+          );
+
 
         if (!response.ok) {
 
@@ -750,18 +1040,21 @@
 
         }
 
+
         busyEvents =
           await response.json();
+
 
         console.log(
           "Eventi calendario ricevuti:",
           busyEvents
         );
 
-        // Se una data è già selezionata,
-        // aggiorna immediatamente gli slot.
+
         if (dateInput.value) {
+
           checkAvailableSlots();
+
         }
 
       } catch (err) {
@@ -776,77 +1069,109 @@
     }
 
 
-    // ============================================================
-    // GESTIONE SELEZIONE CARD
-    // ============================================================
+    /* ============================================================
+       GESTIONE SELEZIONE CARD
+       ============================================================ */
 
     const serviceCards =
       document.querySelectorAll(
-        '.service-card'
+        ".service-card"
       );
 
 
-    serviceCards.forEach(card => {
+    serviceCards.forEach(
+      card => {
 
-      card.addEventListener(
-        'click',
-        () => {
+        card.addEventListener(
+          "click",
+          () => {
 
-          serviceCards.forEach(c =>
-            c.classList.remove('selected')
-          );
-
-          card.classList.add('selected');
-
-          const radio =
-            card.querySelector(
-              'input[type="radio"]'
+            serviceCards.forEach(
+              c =>
+                c.classList.remove(
+                  "selected"
+                )
             );
 
-          if (radio) {
-            radio.checked = true;
+
+            card.classList.add(
+              "selected"
+            );
+
+
+            const radio =
+              card.querySelector(
+                'input[type="radio"]'
+              );
+
+
+            if (radio) {
+
+              radio.checked =
+                true;
+
+
+              /*
+               * Non inviamo il valore dell'area a Clarity.
+               * Tracciamo soltanto l'azione.
+               */
+
+              clarityEvent(
+                "area_interesse_selezionata"
+              );
+
+            }
+
           }
+        );
 
-        }
-      );
-
-    });
+      }
+    );
 
 
-    // ============================================================
-    // DATA
-    // ============================================================
+    /* ============================================================
+       DATA
+       ============================================================ */
 
     const dateInput =
       document.getElementById(
-        'dataAppuntamento'
+        "dataAppuntamento"
       );
 
 
     const today =
       new Date()
         .toISOString()
-        .split('T')[0];
+        .split("T")[0];
 
 
     dateInput.setAttribute(
-      'min',
+      "min",
       today
     );
 
 
+    /* ============================================================
+       APERTURA CALENDARIO
+       ============================================================ */
+
     const openCalendarBtn =
       document.getElementById(
-        'openCalendarBtn'
+        "openCalendarBtn"
       );
 
 
     openCalendarBtn.addEventListener(
-      'click',
+      "click",
       () => {
 
+        clarityEvent(
+          "calendario_aperto"
+        );
+
+
         if (
-          'showPicker' in
+          "showPicker" in
           HTMLInputElement.prototype
         ) {
 
@@ -862,13 +1187,21 @@
     );
 
 
-    // ============================================================
-    // CONTROLLO DISPONIBILITA'
-    // ============================================================
+    /* ============================================================
+       CONTROLLO DISPONIBILITA'
+       ============================================================ */
 
     dateInput.addEventListener(
-      'change',
-      checkAvailableSlots
+      "change",
+      () => {
+
+        clarityEvent(
+          "data_selezionata"
+        );
+
+        checkAvailableSlots();
+
+      }
     );
 
 
@@ -879,166 +1212,194 @@
 
 
       if (!selectedDateStr) {
+
         return;
+
       }
 
 
       const timeBtns =
         document.querySelectorAll(
-          '.time-btn'
+          ".time-btn"
         );
 
 
-      timeBtns.forEach(btn => {
+      timeBtns.forEach(
+        btn => {
 
-        const slotTimeStr =
-          btn.getAttribute(
-            'data-time'
-          );
-
-
-        const slotStart =
-          new Date(
-            `${selectedDateStr}T${slotTimeStr}:00`
-          );
-
-
-        const slotEnd =
-          new Date(
-            slotStart.getTime() +
-            (45 * 60000)
-          );
-
-
-        const isOccupied =
-          busyEvents.some(event => {
-
-            const evStart =
-              new Date(event.start);
-
-            const evEnd =
-              new Date(event.end);
-
-
-            return (
-              slotStart < evEnd &&
-              slotEnd > evStart
+          const slotTimeStr =
+            btn.getAttribute(
+              "data-time"
             );
 
-          });
+
+          const slotStart =
+            new Date(
+              `${selectedDateStr}T${slotTimeStr}:00`
+            );
 
 
-        if (isOccupied) {
+          const slotEnd =
+            new Date(
+              slotStart.getTime() +
+              (45 * 60000)
+            );
 
-          btn.classList.add(
-            'disabled'
-          );
+
+          const isOccupied =
+            busyEvents.some(
+              event => {
+
+                const evStart =
+                  new Date(
+                    event.start
+                  );
 
 
-          if (
-            btn.classList.contains(
-              'selected'
-            )
-          ) {
+                const evEnd =
+                  new Date(
+                    event.end
+                  );
+
+
+                return (
+                  slotStart < evEnd &&
+                  slotEnd > evStart
+                );
+
+              }
+            );
+
+
+          if (isOccupied) {
+
+            btn.classList.add(
+              "disabled"
+            );
+
+
+            if (
+              btn.classList.contains(
+                "selected"
+              )
+            ) {
+
+              btn.classList.remove(
+                "selected"
+              );
+
+
+              document.getElementById(
+                "orarioNascosto"
+              ).value = "";
+
+
+              selectedTimeSlot = "";
+
+            }
+
+          } else {
 
             btn.classList.remove(
-              'selected'
+              "disabled"
             );
-
-            document.getElementById(
-              'orarioNascosto'
-            ).value = '';
-
-            selectedTimeSlot = '';
 
           }
 
-        } else {
-
-          btn.classList.remove(
-            'disabled'
-          );
-
         }
-
-      });
+      );
 
     }
 
 
-    // ============================================================
-    // SELEZIONE SLOT ORARIO
-    // ============================================================
+    /* ============================================================
+       SELEZIONE SLOT ORARIO
+       ============================================================ */
 
-    let selectedTimeSlot = '';
+    let selectedTimeSlot = "";
 
 
     const timeBtns =
       document.querySelectorAll(
-        '.time-btn'
+        ".time-btn"
       );
 
 
     const hiddenTimeInput =
       document.getElementById(
-        'orarioNascosto'
+        "orarioNascosto"
       );
 
 
-    timeBtns.forEach(btn => {
+    timeBtns.forEach(
+      btn => {
 
-      btn.addEventListener(
-        'click',
-        () => {
+        btn.addEventListener(
+          "click",
+          () => {
 
-          if (
-            btn.classList.contains(
-              'disabled'
-            )
-          ) {
-            return;
-          }
+            if (
+              btn.classList.contains(
+                "disabled"
+              )
+            ) {
 
+              return;
 
-          timeBtns.forEach(b =>
-            b.classList.remove(
-              'selected'
-            )
-          );
+            }
 
 
-          btn.classList.add(
-            'selected'
-          );
-
-
-          selectedTimeSlot =
-            btn.getAttribute(
-              'data-time'
+            timeBtns.forEach(
+              b =>
+                b.classList.remove(
+                  "selected"
+                )
             );
 
 
-          hiddenTimeInput.value =
-            selectedTimeSlot;
-
-        }
-      );
-
-    });
+            btn.classList.add(
+              "selected"
+            );
 
 
-    // ============================================================
-    // INVIO PRENOTAZIONE
-    // ============================================================
+            selectedTimeSlot =
+              btn.getAttribute(
+                "data-time"
+              );
+
+
+            hiddenTimeInput.value =
+              selectedTimeSlot;
+
+
+            /*
+             * Tracciamo solo l'azione,
+             * non l'orario specifico.
+             */
+
+            clarityEvent(
+              "orario_selezionato"
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    /* ============================================================
+       INVIO PRENOTAZIONE
+       ============================================================ */
 
     const bookingForm =
       document.getElementById(
-        'bookingForm'
+        "bookingForm"
       );
 
 
     bookingForm.addEventListener(
-      'submit',
+      "submit",
       async (e) => {
 
         e.preventDefault();
@@ -1046,62 +1407,75 @@
 
         if (!selectedTimeSlot) {
 
-          alert(
-            'Per favore, seleziona un orario valido e disponibile per la videochiamata.'
+          clarityEvent(
+            "tentativo_prenotazione_senza_orario"
           );
+
+
+          alert(
+            "Per favore, seleziona un orario valido e disponibile per la videochiamata."
+          );
+
 
           return;
 
         }
 
 
+        clarityEvent(
+          "prenotazione_inviata"
+        );
+
+
         const btnSubmit =
           document.getElementById(
-            'btnSubmit'
+            "btnSubmit"
           );
 
 
-        btnSubmit.disabled = true;
+        btnSubmit.disabled =
+          true;
+
 
         btnSubmit.textContent =
-          'Elaborazione e salvataggio in corso...';
+          "Elaborazione e salvataggio in corso...";
 
 
-        // --------------------------------------------------------
-        // COSTRUZIONE PAYLOAD
-        // --------------------------------------------------------
+        /* --------------------------------------------------------
+           COSTRUZIONE PAYLOAD
+           -------------------------------------------------------- */
 
         const payload = {
 
           nome:
             document.getElementById(
-              'nome'
+              "nome"
             ).value.trim(),
 
           cognome:
             document.getElementById(
-              'cognome'
+              "cognome"
             ).value.trim(),
 
           email:
             document.getElementById(
-              'email'
+              "email"
             ).value.trim(),
 
           telefono:
             document.getElementById(
-              'telefono'
+              "telefono"
             ).value.trim(),
 
           area:
             document.querySelector(
               'input[name="Area_Interesse"]:checked'
             )?.value ||
-            'Consulenza Generica',
+            "Consulenza Generica",
 
           data:
             document.getElementById(
-              'dataAppuntamento'
+              "dataAppuntamento"
             ).value,
 
           ora:
@@ -1109,7 +1483,7 @@
 
           note:
             document.getElementById(
-              'note'
+              "note"
             ).value.trim()
 
         };
@@ -1121,9 +1495,9 @@
         );
 
 
-        // --------------------------------------------------------
-        // INVIO A GOOGLE APPS SCRIPT
-        // --------------------------------------------------------
+        /* --------------------------------------------------------
+           INVIO A GOOGLE APPS SCRIPT
+           -------------------------------------------------------- */
 
         try {
 
@@ -1131,17 +1505,18 @@
             await fetch(
               SCRIPT_URL,
               {
-                method: 'POST',
+                method: "POST",
 
                 headers: {
-                  'Content-Type':
-                    'text/plain;charset=utf-8'
+                  "Content-Type":
+                    "text/plain;charset=utf-8"
                 },
 
                 body:
                   JSON.stringify(
                     payload
                   )
+
               }
             );
 
@@ -1164,50 +1539,65 @@
 
           if (
             result.result ===
-            'success'
+            "success"
           ) {
 
+            /*
+             * Evento fondamentale:
+             * prenotazione effettivamente completata.
+             */
+
+            clarityEvent(
+              "prenotazione_completata"
+            );
+
+
             document.getElementById(
-              'resNome'
+              "resNome"
             ).textContent =
               `${payload.nome} ${payload.cognome}`;
 
 
             document.getElementById(
-              'resArea'
+              "resArea"
             ).textContent =
               payload.area;
 
 
             document.getElementById(
-              'resData'
+              "resData"
             ).textContent =
               new Date(
                 payload.data
               ).toLocaleDateString(
-                'it-IT',
+                "it-IT",
                 {
-                  weekday: 'long',
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric"
                 }
               );
 
 
             document.getElementById(
-              'resOra'
+              "resOra"
             ).textContent =
               selectedTimeSlot;
 
 
             document.getElementById(
-              'confirmationModal'
+              "confirmationModal"
             ).style.display =
-              'flex';
+              "flex";
 
 
           } else {
+
+            clarityEvent(
+              "errore_prenotazione"
+            );
+
 
             console.error(
               "Apps Script ha restituito un errore:",
@@ -1224,6 +1614,11 @@
 
         } catch (error) {
 
+          clarityEvent(
+            "errore_connessione_prenotazione"
+          );
+
+
           console.error(
             "Errore durante l'invio della prenotazione:",
             error
@@ -1237,10 +1632,12 @@
 
         } finally {
 
-          btnSubmit.disabled = false;
+          btnSubmit.disabled =
+            false;
+
 
           btnSubmit.textContent =
-            'Conferma e Invia Prenotazione';
+            "Conferma e Invia Prenotazione";
 
         }
 
@@ -1248,46 +1645,92 @@
     );
 
 
-    // ============================================================
-    // CHIUSURA MODALE
-    // ============================================================
+    /* ============================================================
+       GOOGLE MEET
+       ============================================================ */
+
+    const googleMeetBtn =
+      document.getElementById(
+        "googleMeetBtn"
+      );
+
+
+    googleMeetBtn.addEventListener(
+      "click",
+      () => {
+
+        clarityEvent(
+          "click_google_meet"
+        );
+
+      }
+    );
+
+
+    /* ============================================================
+       CHIUSURA MODALE
+       ============================================================ */
 
     function closeModal() {
 
+      clarityEvent(
+        "chiusura_conferma_prenotazione"
+      );
+
+
       document.getElementById(
-        'confirmationModal'
+        "confirmationModal"
       ).style.display =
-        'none';
+        "none";
 
 
       bookingForm.reset();
 
 
-      serviceCards.forEach(c =>
-        c.classList.remove(
-          'selected'
-        )
+      serviceCards.forEach(
+        c =>
+          c.classList.remove(
+            "selected"
+          )
       );
 
 
-      timeBtns.forEach(b =>
-        b.classList.remove(
-          'selected',
-          'disabled'
-        )
+      timeBtns.forEach(
+        b =>
+          b.classList.remove(
+            "selected",
+            "disabled"
+          )
       );
 
 
-      selectedTimeSlot = '';
+      selectedTimeSlot =
+        "";
 
-      hiddenTimeInput.value = '';
+
+      hiddenTimeInput.value =
+        "";
 
     }
 
 
-    // ============================================================
-    // AVVIO CARICAMENTO CALENDARIO
-    // ============================================================
+    /* ============================================================
+       PULSANTE CHIUDI
+       ============================================================ */
+
+    document
+      .getElementById(
+        "btnCloseModal"
+      )
+      .addEventListener(
+        "click",
+        closeModal
+      );
+
+
+    /* ============================================================
+       AVVIO CARICAMENTO CALENDARIO
+       ============================================================ */
 
     loadBusySlots();
 
@@ -1295,3 +1738,4 @@
 
 </body>
 </html>
+```
